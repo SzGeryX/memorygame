@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#game{
+    width: 500px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.card{
+    background-color: #31485a;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2em;
+}
+
+.card:hover{
+    cursor: pointer;
+}
+
+nav,footer{
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.selected {
+    background-color: orange ;
+}
+
+.found{
+    background-color: green;
+}
