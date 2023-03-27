@@ -25,8 +25,7 @@ for (let i = 0; i < 16; i++) {
     card.innerText = iconList[i]
     card.classList.add("selected")
 
-    test()
-    
+    setTimeout(() =>{test()}, 1000)    
 
    /* if (moves == 0){
         latest = card
@@ -72,5 +71,18 @@ function test(){
     let card1 = selectedCards[0]
     let card2 = selectedCards[1]
     
-    
+    if(card1.innerHTML === card2.innerHTML){
+        card2.classList.remove("selected")
+        card2.classList.add("found")
+
+        card1.classList.remove("selected")
+        card1.classList.add("found")
+
+    }
+    else {
+        card1.classList.remove("selected")
+        card2.classList.remove("selected")
+        card1.classList.innerHTML = ""
+        card2.classList.innerHTML = ""
+    }
 }
