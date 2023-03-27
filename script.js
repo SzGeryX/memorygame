@@ -22,6 +22,7 @@ for (let i = 0; i < 16; i++) {
     card.classList.add("card")
     game.appendChild(card)
     card.onclick = () => {
+    document.getElementById("moves").innerText = document.getElementById("moves").innerText*1 + 1 
     if(document.getElementsByClassName("selected").length > 1) return
     card.innerText = iconList[i]
     card.classList.add("selected")
@@ -57,6 +58,7 @@ function restart() {
     cards[i].classList.remove("selected")
     }
 
+    document.getElementById("moves").innerText = 0  
 
 }
 
