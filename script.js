@@ -22,6 +22,7 @@ for (let i = 0; i < 16; i++) {
     card.classList.add("card")
     game.appendChild(card)
     card.onclick = () => {
+    if(document.getElementsByClassName("selected").length > 1) return
     card.innerText = iconList[i]
     card.classList.add("selected")
 
@@ -52,7 +53,11 @@ function restart() {
 
     for (let i = 0; i < 16; i++) {
     cards[i].innerText = ""
+    cards[i].classList.remove("found")
+    cards[i].classList.remove("selected")
     }
+
+
 }
 
 function newgame() {
@@ -66,12 +71,12 @@ function newgame() {
 
 function test(){
     let selectedCards = document.getElementsByClassName("selected")
-    if (selectedCards < 2) return
+    if (selectedCards < 2) {return}
 
     let card1 = selectedCards[0]
     let card2 = selectedCards[1]
     
-    if(card1.innerHTML === card2.innerHTML){
+    if(card1.innerText === card2.innerText){
         card2.classList.remove("selected")
         card2.classList.add("found")
 
@@ -80,9 +85,12 @@ function test(){
 
     }
     else {
+        
         card1.classList.remove("selected")
         card2.classList.remove("selected")
-        card1.classList.innerHTML = ""
-        card2.classList.innerHTML = ""
+        card1.innerText = ""
+        card2.innerText = ""
     }
+
+    
 }
